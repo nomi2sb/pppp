@@ -37,3 +37,114 @@ footer {
 img {
     width: 120px;
 }
+/* General Styles */
+body {
+    font-family: Arial, sans-serif; /* Font for the body */
+    background-color: #f4f4f4; /* Light grey background */
+    margin: 0; /* Remove default margin */
+    padding: 20px; /* Padding around the body */
+}
+
+h1, h2, h3 {
+    color: #333; /* Dark text color */
+}
+
+/* Slider Styles */
+.slider {
+    position: relative;
+    max-width: 600px; /* Maximum width of the slider */
+    margin: auto; /* Center the slider */
+    border: 2px solid #ccc; /* Border around the slider */
+    border-radius: 10px; /* Rounded corners */
+    overflow: hidden; /* Hide overflow */
+}
+
+.controls {
+    position: absolute;
+    bottom: 10px; /* Positioning controls at the bottom */
+    left: 50%; /* Centering the controls */
+    transform: translateX(-50%); /* Centering */
+}
+
+button {
+    background-color: #4CAF50; /* Green background */
+    color: white; /* White text */
+    border: none; /* No border */
+    padding: 10px 15px; /* Padding */
+    margin: 5px; /* Margin */
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor */
+}
+
+button:hover {
+    background-color: #45a049; /* Darker green on hover */
+}
+
+/* Dynamic Content Styles */
+.game-list {
+    display: flex; /* Flexbox for alignment */
+    flex-wrap: wrap; /* Wrap items */
+    justify-content: space-around; /* Space between items */
+}
+
+.game-item {
+    border: 1px solid #ccc; /* Border around each item */
+    border-radius: 10px; /* Rounded corners */
+    margin: 10px; /* Margin */
+    padding: 10px; /* Padding */
+    text-align: center; /* Center text */
+    width: 200px; /* Fixed width for items */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Shadow effect */
+}
+
+.game-item img {
+    width: 100%; /* Image responsive */
+    border-radius: 5px; /* Rounded corners */
+}
+
+/* Form Styles */
+form {
+    margin: 20px; /* Margin around the form */
+}
+
+input[type="text"], input[type="submit"] {
+    padding: 10px; /* Padding */
+    margin: 5px 0; /* Margin */
+    width: 100%; /* Full width */
+    border: 1px solid #ccc; /* Border */
+    border-radius: 5px; /* Rounded corners */
+}
+
+input[type="submit"] {
+    background-color: #4CAF50; /* Green background */
+    color: white; /* White text */
+    cursor: pointer; /* Pointer cursor */
+}
+
+input[type="submit"]:hover {
+    background-color: #45a049; /* Darker green on hover */
+}
+
+/* Search Functionality Styles */
+#search {
+    padding: 10px; /* Padding */
+    width: 100%; /* Full width */
+    margin-bottom: 20px; /* Margin */
+    border: 1px solid #ccc; /* Border */
+    border-radius: 5px; /* Rounded corners */
+}
+
+/* Interactivity Styles */
+button {
+    background-color: #008CBA; /* Blue background */
+    color: white; /* White text */
+    border: none; /* No border */
+    padding: 10px 15px; /* Padding */
+    margin: 5px; /* Margin */
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor */
+}
+
+button:hover {
+    background-color: #007B9A; /* Darker blue on hover */
+}
