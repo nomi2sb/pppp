@@ -22,8 +22,106 @@
             <!-- Aur games yahan -->
         </section>
     </main>
-    <footer>
-        <p>&copy; 2024 Pak Games. Sab haqooq mehfooz hain.</p>
-    </footer>
+    
+    <div class="slider">
+        <img id="slider-image" src="images/company_icon.png" alt="Game Image" width="100%">
+        <button onclick="prevImage()">Previous</button>
+        <button onclick="nextImage()">Next</button>
+    </div>
+    
+    <script>
+        let currentImage = 0;
+        const images = [
+            'images/game1.png',
+            'images/game2.png',
+            'images/game3.png'
+        ];
+    
+        function showImage(index) {
+            document.getElementById('slider-image').src = images[index];
+        }
+    
+        function nextImage() {
+            currentImage = (currentImage + 1) % images.length;
+            showImage(currentImage);
+        }
+    
+        function prevImage() {
+            currentImage = (currentImage - 1 + images.length) % images.length;
+            showImage(currentImage);
+        }
+    </script>
+<div id="game-list"></div>
+
+<script>
+    const games = [
+        { title: "Game 1", image: "images/game1.png", description: "Description for Game 1" },
+        { title: "Game 2", image: "images/game2.png", description: "Description for Game 2" },
+        { title: "Game 3", image: "images/game3.png", description: "Description for Game 3" }
+    ];
+
+    function loadGames() {
+        const gameListDiv = document.getElementById('game-list');
+        games.forEach(game => {
+            const gameDiv = document.createElement('div');
+            gameDiv.innerHTML = `
+                <h3>${game.title}</h3>
+                <img src="${game.image}" alt="${game.title}" width="100">
+                <p>${game.description}</p>
+            `;
+            gameListDiv.appendChild(gameDiv);
+        });
+    }
+
+    window.onload = loadGames;
+</script>
+<form onsubmit="return validateForm()">
+    <input type="text" id="title" placeholder="Game Title" required>
+    <input type="submit" value="Submit">
+</form>
+
+<script>
+    function validateForm() {
+        const title = document.getElementById('title').value;
+        if (title.length < 3) {
+            alert("Title must be at least 3 characters long.");
+            return false; // Prevent form submission
+        }
+        return true; // Allow form submission
+    }
+</script>
+<input type="text" id="search" placeholder="Search games..." onkeyup="searchGames()">
+<div id="game-list"></div>
+
+<script>
+    const games = ["Game 1", "Game 2", "Game 3"];
+
+    function searchGames() {
+        const query = document.getElementById('search').value.toLowerCase();
+        const filteredGames = games.filter(game => game.toLowerCase().includes(query));
+        displayGames(filteredGames);
+    }
+
+    function displayGames(gamesToDisplay) {
+        const gameListDiv = document.getElementById('game-list');
+        gameListDiv.innerHTML = ''; // Clear previous results
+        gamesToDisplay.forEach(game => {
+            const gameDiv = document.createElement('div');
+            gameDiv.innerText = game;
+            gameListDiv.appendChild(gameDiv);
+        });
+    }
+</script>
+<button onclick="showAlert()">Click Me</button>
+
+<script>
+    function showAlert() {
+        alert("Button Clicked!");
+    }
+</script>
+<footer>
+    <p>&copy; 2024 Pak Games. Sab haqooq mehfooz hain.</p>
+</footer>
+    
 </body>
 </html>
